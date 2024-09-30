@@ -9,6 +9,6 @@ public class SalesOrder
 
     public override string ToString()
     {
-        return $"Order Id: {OrderId}";
+        return $"Order Id: {OrderId}, Customer: {Customer}";
     }
 }
