@@ -5,6 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Westcoast_EShop_Rev1</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
+    <nowarn>IDE0130</nowarn>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
