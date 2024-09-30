@@ -23,7 +23,18 @@ class Program
         SalesOrder order = new()
         {
             OrderId = "123456789",
-            OrderDate = DateTime.Now
+            OrderDate = DateTime.Now,
+            Customer = new Customer
+            {
+                CustomerId = 123456789,
+                CreationDate = DateTime.Now,
+                LastPurchase = DateTime.Now,
+                FirstName = "John",
+                LastName = "Doe",
+                AddressLine = "1st Street",
+                PostalCode = "55 588",
+                City = "London"
+            }
         };
 
         var path = string.Concat(Environment.CurrentDirectory, "/data/salesorder.json");
