@@ -1,23 +1,10 @@
-﻿using System.Text.Encodings.Web;
-using System.Text.Json;
-using Westcoast_EShop.Models;
+﻿using Westcoast_EShop.Models;
+using static Westcoast_EShop.Models.Storage;
 
 namespace Westcoast_EShop;
 
 class Program
 {
-    private static readonly JsonSerializerOptions s_writeOptions = new()
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        WriteIndented = true,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
-
-    private static readonly JsonSerializerOptions s_readOptions = new()
-    {
-        PropertyNameCaseInsensitive = true
-    };
-
     static void Main()
     {
         var orders = new List<SalesOrder>();
@@ -132,8 +119,6 @@ class Program
         orders.Add(order);
 
         var path = string.Concat(Environment.CurrentDirectory, "/data/orders.json");
-        var json = JsonSerializer.Serialize(orders, s_writeOptions);
-
-        File.WriteAllText(path, json);
+        WriteToFile(path, orders);
     }
 }
