@@ -37,6 +37,24 @@ class Program
             }
         };
 
+        var orderItem = new OrderItem()
+        {
+            Quantity = 40,
+            Discount = 0.10m
+        };
+        var product = new Product()
+        {
+            ProductId = 1,
+            ItemNumber = "1-00001",
+            Name = "First Product",
+            Price = 1000
+        };
+        orderItem.Product = product;
+        orderItem.LineSum = orderItem.Quantity * (orderItem.Product.Price - (orderItem.Discount * orderItem.Product.Price));
+
+        order.OrderItems = [];
+        order.OrderItems.Add(orderItem);
+
         var path = string.Concat(Environment.CurrentDirectory, "/data/salesorder.json");
         var json = JsonSerializer.Serialize(order, s_writeOptions);
 
