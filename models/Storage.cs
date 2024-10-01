@@ -5,8 +5,6 @@ namespace Westcoast_EShop.Models;
 
 public class Storage
 {
-    public SalesOrder? Orders { get; set; }
-
     private static readonly JsonSerializerOptions s_writeOptions = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
