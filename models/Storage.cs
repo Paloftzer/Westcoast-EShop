@@ -12,6 +12,7 @@ public class Storage
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
 
+    /* Currently useless but will be useful when we start deserializing */
     private static readonly JsonSerializerOptions s_readOptions = new()
     {
         PropertyNameCaseInsensitive = true
