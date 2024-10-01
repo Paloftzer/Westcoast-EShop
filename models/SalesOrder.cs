@@ -11,6 +11,6 @@ public class SalesOrder
 
     public override string ToString()
     {
-        return $"Order Id: {OrderId}, Order Date: {OrderDate.ToString("yyyy-MM-dd")}, Customer: {Customer}";
+        return $"Order Id: {OrderId}, Order Date: {OrderDate.ToString("yyyy-MM-dd")}, {Customer}";
     }
 }

@@ -37,11 +37,6 @@ class Program
             }
         };
 
-        var orderItem = new OrderItem()
-        {
-            Quantity = 40,
-            Discount = 0.10m
-        };
         var product = new Product()
         {
             ProductId = 1,
@@ -49,10 +44,32 @@ class Program
             Name = "First Product",
             Price = 1000
         };
-        orderItem.Product = product;
+        var orderItem = new OrderItem()
+        {
+            Quantity = 40,
+            Discount = 0.10m,
+            Product = product
+        };
         orderItem.LineSum = orderItem.Quantity * (orderItem.Product.Price - (orderItem.Discount * orderItem.Product.Price));
 
         order.OrderItems = [];
+        order.OrderItems.Add(orderItem);
+
+        product = new Product()
+        {
+            ProductId = 2,
+            ItemNumber = "1-00002",
+            Name = "Second Product",
+            Price = 3750
+        };
+        orderItem = new OrderItem()
+        {
+            Quantity = 25,
+            Discount = 0.175m,
+            Product = product
+        };
+        orderItem.LineSum = orderItem.Quantity * (orderItem.Product.Price - (orderItem.Discount * orderItem.Product.Price));
+
         order.OrderItems.Add(orderItem);
 
         var path = string.Concat(Environment.CurrentDirectory, "/data/salesorder.json");
