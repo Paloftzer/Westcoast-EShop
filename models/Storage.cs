@@ -24,4 +24,11 @@ public class Storage
 
         File.WriteAllText(path, json);
     }
+
+    public static List<SalesOrder> ReadFromFile(string path)
+    {
+        var json = File.ReadAllText(path);
+        return JsonSerializer.Deserialize<List<SalesOrder>>(json, s_readOptions)!;
+        
+    }
 }

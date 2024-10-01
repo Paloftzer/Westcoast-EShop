@@ -119,6 +119,20 @@ class Program
         orders.Add(order);
 
         var path = string.Concat(Environment.CurrentDirectory, "/data/orders.json");
+
         WriteToFile(path, orders);
+
+        var ordersFromFile = ReadFromFile(path);
+        Console.WriteLine("\n", "Orders", "\n");
+
+        foreach (var item in ordersFromFile)
+        {
+            Console.WriteLine(item);
+        }
+
+        foreach (var item in order.OrderItems)
+        {
+            Console.WriteLine(item);
+        }
     }
 }
