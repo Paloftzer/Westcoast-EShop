@@ -1,0 +1,82 @@
+[
+  {
+    "orderId": "123456789",
+    "orderDate": "2024-10-01T11:08:36.6655525+02:00",
+    "orderItems": [
+      {
+        "quantity": 40,
+        "lineSum": 36000.00,
+        "discount": 0.10,
+        "product": {
+          "productId": 1,
+          "itemNumber": "1-00001",
+          "name": "First Product",
+          "price": 1000
+        }
+      },
+      {
+        "quantity": 25,
+        "lineSum": 77343.750,
+        "discount": 0.175,
+        "product": {
+          "productId": 2,
+          "itemNumber": "1-00002",
+          "name": "Second Product",
+          "price": 3750
+        }
+      }
+    ],
+    "customer": {
+      "customerId": 123456789,
+      "creationDate": "2024-10-01T11:08:36.6752187+02:00",
+      "lastPurchase": "2024-10-01T11:08:36.6754229+02:00",
+      "firstName": "John",
+      "lastName": "Doe",
+      "addressLine": "1st Street",
+      "postalCode": "55 588",
+      "city": "London",
+      "email": null,
+      "phoneNumber": null
+    }
+  },
+  {
+    "orderId": "987654321",
+    "orderDate": "2024-10-01T11:08:36.676419+02:00",
+    "orderItems": [
+      {
+        "quantity": 12,
+        "lineSum": 9078.00,
+        "discount": 0.15,
+        "product": {
+          "productId": 3,
+          "itemNumber": "1-00003",
+          "name": "Third Product",
+          "price": 890
+        }
+      },
+      {
+        "quantity": 70,
+        "lineSum": 1347.5000,
+        "discount": 0.30,
+        "product": {
+          "productId": 4,
+          "itemNumber": "1-00004",
+          "name": "Fourth Product",
+          "price": 27.50
+        }
+      }
+    ],
+    "customer": {
+      "customerId": 987654321,
+      "creationDate": "2024-10-01T11:08:36.6764206+02:00",
+      "lastPurchase": "2024-10-01T11:08:36.6764209+02:00",
+      "firstName": "Doe",
+      "lastName": "John",
+      "addressLine": "London",
+      "postalCode": "88 555",
+      "city": "1st Street",
+      "email": null,
+      "phoneNumber": null
+    }
+  }
+]

@@ -20,6 +20,8 @@ class Program
 
     static void Main()
     {
+        var orders = new List<SalesOrder>();
+
         SalesOrder order = new()
         {
             OrderId = "123456789",
@@ -72,14 +74,66 @@ class Program
 
         order.OrderItems.Add(orderItem);
 
-        var path = string.Concat(Environment.CurrentDirectory, "/data/salesorder.json");
-        var json = JsonSerializer.Serialize(order, s_writeOptions);
+        orders.Add(order);
+
+        /* Orders p2 */
+        order = new()
+        {
+            OrderId = "987654321",
+            OrderDate = DateTime.Now,
+            Customer = new Customer
+            {
+                CustomerId = 987654321,
+                CreationDate = DateTime.Now,
+                LastPurchase = DateTime.Now,
+                FirstName = "Doe",
+                LastName = "John",
+                AddressLine = "London",
+                PostalCode = "88 555",
+                City = "1st Street"
+            }
+        };
+
+        product = new Product()
+        {
+            ProductId = 3,
+            ItemNumber = "1-00003",
+            Name = "Third Product",
+            Price = 890
+        };
+        orderItem = new OrderItem()
+        {
+            Quantity = 12,
+            Discount = 0.15m,
+            Product = product
+        };
+        orderItem.LineSum = orderItem.Quantity * (orderItem.Product.Price - (orderItem.Discount * orderItem.Product.Price));
+
+        order.OrderItems = [];
+        order.OrderItems.Add(orderItem);
+
+        product = new Product()
+        {
+            ProductId = 4,
+            ItemNumber = "1-00004",
+            Name = "Fourth Product",
+            Price = 27.50m
+        };
+        orderItem = new OrderItem()
+        {
+            Quantity = 70,
+            Discount = 0.30m,
+            Product = product
+        };
+        orderItem.LineSum = orderItem.Quantity * (orderItem.Product.Price - (orderItem.Discount * orderItem.Product.Price));
+
+        order.OrderItems.Add(orderItem);
+
+        orders.Add(order);
+
+        var path = string.Concat(Environment.CurrentDirectory, "/data/orders.json");
+        var json = JsonSerializer.Serialize(orders, s_writeOptions);
 
         File.WriteAllText(path, json);
-
-        Console.WriteLine(File.ReadAllText(path));
-
-        var salesorder = JsonSerializer.Deserialize<SalesOrder>(json, s_readOptions);
-        Console.WriteLine(salesorder);
     }
 }
